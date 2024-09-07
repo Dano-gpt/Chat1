@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Propinas</title>
+    <title>Paddle Match</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de Propinas</h1>
-        <input type="number" id="billAmount" placeholder="Monto de la cuenta">
-        <input type="number" id="tipPercentage" placeholder="Porcentaje de propina">
-        <button onclick="calculateTip()">Calcular Propina</button>
-        <p id="result"></p>
+        <h1>Paddle Match</h1>
+        
+        <div id="register">
+            <h2>Registro de Usuario</h2>
+            <input type="text" id="username" placeholder="Nombre de Usuario">
+            <input type="email" id="email" placeholder="Email">
+            <input type="text" id="location" placeholder="Ubicación">
+            <button onclick="registerUser()">Registrarse</button>
+        </div>
+
+        <div id="profile" style="display: none;">
+            <h2>Perfil de Usuario</h2>
+            <p><strong>Nombre:</strong> <span id="displayUsername"></span></p>
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            <p><strong>Ubicación:</strong> <span id="displayLocation"></span></p>
+            <button onclick="searchPlayers()">Buscar Jugadores en mi Zona</button>
+        </div>
+
+        <div id="playersList" style="display: none;">
+            <h2>Jugadores Disponibles en tu Zona</h2>
+            <ul id="players"></ul>
+        </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
